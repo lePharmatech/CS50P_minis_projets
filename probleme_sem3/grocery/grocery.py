@@ -1,0 +1,18 @@
+def main():
+    items = {}
+    while True:
+        try:
+            item = input("").upper().strip()
+            # ici je gere l'ajout dans le dict et la clée
+            if item in items:
+                items[item] += 1
+            else:
+                items[item] = 1
+        except (EOFError):
+            print()
+            break
+
+    for item in sorted(items):
+        print(f"{items[item]} {item}")
+
+main()
